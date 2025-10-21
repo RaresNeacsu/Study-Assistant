@@ -1,0 +1,7 @@
+.venv
+requirements.txt
+task.json
+ignorat/
+app/__pycache__/
+app/__pycache__/*.pyc
+
