@@ -1,6 +1,6 @@
 .venv
 requirements.txt
 task.json
-ignorat/
+ignore/
 __pycache__/
 
