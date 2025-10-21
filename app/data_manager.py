@@ -2,7 +2,7 @@ import json
 import os
 
 BASEDIR = os.path.dirname(os.path.dirname(__file__))
-BASETASKFILE = os.path.join(BASEDIR,".gitignore", 'task.json')
+BASETASKFILE = os.path.join(BASEDIR,"ignore", 'task.json')
 
 def load_json(file=BASETASKFILE):
     try:

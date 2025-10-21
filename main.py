@@ -1,7 +1,10 @@
 import sys
+import os
 import json
 from app.data_manager import load_json, save_json
 from app.time_utilities import zile_deadline
+
+BASETASKFILE = os.path.join(os.path.dirname(__file__),"ignore", 'task.json')
 
 cmd=input("Command(add, delete, list): ")
 
@@ -16,12 +19,12 @@ if(cmd=="delete"):
     for task in tasks:
         if task["Title"]==title:
             tasks.remove(task)
-        with open(tasks, 'w') as f:
-            for entry in tasks:
-                f.write(json.dumps(entry) + "\n")
+    with open(BASETASKFILE, 'w') as f:
+        for entry in tasks:
+            f.write(json.dumps(entry) + "\n")
 
 if(cmd=="list"):
     tasks=load_json()
     for task in tasks:
         zile_ramase = zile_deadline(task["Deadline"])
-        print({task["Title"]}, "-", zile_deadline(task["Deadline"]),"zile ramase")
+        print({task["Title"]}, "-", zile_deadline(task["Deadline"])+1,"days remaining")
